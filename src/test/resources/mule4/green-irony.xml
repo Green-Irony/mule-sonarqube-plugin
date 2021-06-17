@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<flow name="green-ironyFlow" doc:id="fc2973f8-653d-45c7-92fe-844beb636fb9" >
+		<logger level="INFO" doc:name="Logger" doc:id="d2a9a53a-0b35-449a-8723-cd1b7d0315b6" />
+		<ee:transform doc:name="Transform Message" doc:id="6acfb7be-33cf-4171-80c8-734e5d0b59f6" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/java
+---
+{
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+	<sub-flow name="green-ironySub_Flow" doc:id="df28efa9-618c-47db-b480-8f3449e82328" >
+		<logger level="INFO" doc:name="Logger" doc:id="42d338ef-4bf2-4513-bd04-39f48823da7d" />
+		<ee:transform doc:name="Transform Message" doc:id="338b1590-1c6f-4116-a508-3f9f8a876c44" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/java
+---
+{
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</sub-flow>
+</mule>
